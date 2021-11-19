@@ -1,0 +1,87 @@
+
+{% load static %}
+<html>
+<head>
+    <title>details</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1, maximum-scale-1, minimum-scale-1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fontawesome.com" rel="stylesheet">
+
+</head>
+<body>
+<nav>{% include 'index/main.html' %} </nav>
+
+<div class="main-content">
+    <div class="section1">
+        <div class="pictures">
+            <div class="description-header">
+                <h2 style="text-align:center;">{{ queries.h_name }}</h2></div>
+            <img class="pic-thumbnail" src="{{ queries.picture.url }}">
+        </div>
+        <div class="description">
+            <div class="description-header">
+                <h3>House description</h3></div>
+            <strong>Location</strong>: {{ queries.location}} <br/>
+            <strong>Rent: {{ queries.rent }}</strong>
+            <h5>Status:</h5>
+
+            <ul>
+                <li>self contained</li>
+                <li>tiled floor</li>
+                <li>Available Hot shower</li>
+                <li>Monthly payment</li>
+            </ul><hr>
+            <div class="contact-area">
+                 <strong style="font-size:24px;">GET YOUR ROOM NOW</strong><br><br>
+                <p><strong>CONTACTS:</strong><br></p>
+                <span><i class="fa fa-phone">  </i> </span><strong>Land-lord:</strong><span> {{ queries.Landlord_no }}</span><br>
+                <i class="fa fa-phone"></i> </span><strong>care-taker:</strong> <span>{{ queries.caretaker_no }}</span>
+
+            </div>
+
+        </div>
+        <div class="comment-section">
+            <div class="description-header">
+            <h4>Leave a comment on {{ queries.h_name}}...</h4></div>
+            <form id="contact-form" action="#" method="post">
+                <input type="text" class="name-field" placeholder="Type name.."><br/><hr/>
+                <input type="text" class="name-field"name="comment" placeholder="Comment here..">
+            </form><hr/>
+            <div class="reviews"></div>
+        </div>
+    </div>
+</div>
+ <div class="b_button"style="margin:20px;"> <a class="btn btn-primary back" href="{% url 'homepage' %}">&#x2190; Back to houses </a>
+</div>
+
+<section class="last-sec">
+        <div class="man-container">
+            <div class="bottom-section">
+
+
+                <div class="container">
+                    <p class="l-p"style="padding-top:8px;">Contact us:
+                        <a href="#">   Innsight@gmail.com</a></p>
+                    <p class="l-p"style="font-weight:500;"> Get Social..</p>
+                    <span><i class="fa fa-twitter">  </i> </span>&nbsp &nbsp
+                    <span><i class="fa fa-instagram"> </i> </span>&nbsp &nbsp
+                    <span><i class="fa fa-facebook">  </i>
+                </span>
+
+                    <p class="footer-text">&copy 2021 Innsight.com. &middot  All rights reserved</p>
+                </div>
+
+
+            </div>
+
+        </div>
+</section>
+
+
+
+
+
+</body>
+</html>
